@@ -4,10 +4,9 @@
 //constantes a usar
 
 const submit = document.querySelector('.js-submit');
-let userNumber = document.querySelector('.js-input').value;
+let userInput = document.querySelector('.js-input');
 const tip = document.querySelector('.js-tip');
-const trycounter = document.querySelector('.js-counter');
-
+let trycounter = document.querySelector('.js-counter');
 
 //funcion para generar un número aleatorio
 
@@ -22,8 +21,10 @@ console.log('Your random numer is', randomNumber);
 //función para adivinar el númeor y sus supuestos
 
 function guessNumber() {
-    let userNumber = document.querySelector('.js-input').value;
-    const randomNumber = getRandomNumber(100);
+    let userNumber = parseInt(userInput.value);
+
+    // let userNumber = document.querySelector('.js-input').value;
+    //const randomNumber = getRandomNumber(100);
 
 
     if (userNumber > randomNumber && userNumber <= 100) {
@@ -37,7 +38,7 @@ function guessNumber() {
         tip.innerHTML = 'Has ganado campeona';
         console.log('has ganado');
 
-    } else if ((userNumber > 100 || userNumber === 0)) {
+    } else if (userNumber > 100 || userNumber === 0) {
         tip.innerHTML = 'El número debe estar entre 1 y 100';
     }
 
@@ -45,7 +46,11 @@ function guessNumber() {
     //contar los intentos
 
     trycounter.innerHTML = parseInt(trycounter.innerHTML) + 1;
+
 }
 
 //evento
 submit.addEventListener('click', guessNumber);
+
+
+
