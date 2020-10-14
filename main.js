@@ -49,6 +49,34 @@ function guessNumber() {
 
 }
 
+
+function writeThis(word) {
+
+
+    return console.log(word.repeat(1));
+}
+
+//CON ESTO ESCRIBImos el número de veces que le diga
+// writeThis('potato'.repeat(1));
+// writeThis('aguacate'.repeat(2));
+// writeThis('pizza'.repeat(50));
+
+function writeThis() {
+
+    for (let i = 0; i < 5; i++) {
+        console.log('potato', i);
+    }
+}
+
+writeThis();
+
+
+
+
+
+
+
+
 //evento
 submit.addEventListener('click', guessNumber);
 
