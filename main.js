@@ -22,59 +22,49 @@ console.log('Your random numer is', randomNumber);
 
 function guessNumber() {
     let userNumber = parseInt(userInput.value);
+    let message = '';
 
     // let userNumber = document.querySelector('.js-input').value;
     //const randomNumber = getRandomNumber(100);
 
 
     if (userNumber > randomNumber && userNumber <= 100) {
-        tip.innerHTML = 'Demasiado alto';
+        message = 'demasiado alto';
 
     } else if (userNumber < randomNumber) {
-        tip.innerHTML = 'Demasiado bajo';
-        console.log('number bajo');
+        message = 'demasiado bajo';
+
 
     } else if (userNumber === randomNumber) {
-        tip.innerHTML = 'Has ganado campeona';
-        console.log('has ganado');
+        message = 'has ganado campeona';
+
 
     } else if (userNumber > 100 || userNumber === 0) {
-        tip.innerHTML = 'El número debe estar entre 1 y 100';
+        message = 'el número debe estar entre 1 y 100';
     }
-
 
     //contar los intentos
 
-    trycounter.innerHTML = parseInt(trycounter.innerHTML) + 1;
+    counter();
+    tip.innerHTML = (`Tu número es ${message}`);
 
 }
 
+// Move the feedback logic to a function and execute it on each click.
+
+
+
+// Move you counter logic into a function and execute it on each click.
+let counterclick = 0;
+
+function counter() {
+    counterclick++;
+    trycounter.innerHTML = counterclick;
+}
 
 function writeThis(word) {
-
-
     return console.log(word.repeat(1));
 }
-
-//CON ESTO ESCRIBImos el número de veces que le diga
-// writeThis('potato'.repeat(1));
-// writeThis('aguacate'.repeat(2));
-// writeThis('pizza'.repeat(50));
-
-function writeThis() {
-
-    for (let i = 0; i < 5; i++) {
-        console.log('potato', i);
-    }
-}
-
-writeThis();
-
-
-
-
-
-
 
 
 //evento
