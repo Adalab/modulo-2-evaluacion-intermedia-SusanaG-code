@@ -1,7 +1,22 @@
-
-
-
 .tip-box {
-    border: solid black 1px;
-    margin-top:10px;
+  border: solid black 1px;
+  margin-top: 10px;
+  width: 50%;
+  height: 30px;
+}
+
+.label {
+  flex-direction: column;
+  display: flex;
+}
+
+.btn {
+  background-color: aquamarine;
+  border-style: none;
+  height: 22px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
 }

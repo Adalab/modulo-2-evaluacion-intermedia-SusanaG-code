@@ -33,8 +33,6 @@ function guessNumber() {
   showFeedback(text);
 }
 
-//
-
 //Feedback function
 const showFeedback = (text) => {
   const tip = document.querySelector(".js-tip");
